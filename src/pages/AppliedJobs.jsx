@@ -9,7 +9,7 @@ function AppliedJobs() {
     useEffect(() => {
         const fetchAppliedJobs = async () => {
             try {
-                const res = await axios.get("http://localhost:8000/api/application/getuserapplicants", {
+                const res = await axios.get("https://jobapp-ytr3.onrender.com/api/application/getuserapplicants", {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setJobs(res.data);

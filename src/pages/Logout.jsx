@@ -12,7 +12,7 @@ function Logout() {
                 const token = localStorage.getItem("token");
                 if (token) {
                     await API.post(
-                        "http://localhost:8000/api/user/logout",
+                        "https://jobapp-ytr3.onrender.com/api/user/logout",
                         {},
                         { headers: { Authorization: `Bearer ${token}` } }
                     );

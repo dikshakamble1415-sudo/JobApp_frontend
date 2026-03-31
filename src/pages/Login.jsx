@@ -15,7 +15,7 @@ function Login() {
     const login = async (e) => {
         e.preventDefault()
 
-        const res = await axios.post("http://localhost:8000/api/user/login", { email, password })
+        const res = await axios.post("https://jobapp-ytr3.onrender.com/api/user/login", { email, password })
         alert("Login Successful")
 
         localStorage.setItem("token", res.data.token)

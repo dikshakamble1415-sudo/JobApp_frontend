@@ -20,7 +20,7 @@ function Register() {
 
         try {
 
-            const res = await axios.post("http://localhost:8000/api/user/register",
+            const res = await axios.post("https://jobapp-ytr3.onrender.com/api/user/register",
                 { name, email, password, role }
             )
 

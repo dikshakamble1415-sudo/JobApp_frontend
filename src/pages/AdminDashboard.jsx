@@ -14,7 +14,7 @@ function AdminDashboard() {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const res = await axios.get("http://localhost:8000/api/job/getJobs", {
+        const res = await axios.get("https://jobapp-ytr3.onrender.com/api/job/getJobs", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setJobs(res.data);
@@ -29,13 +29,13 @@ function AdminDashboard() {
     e.preventDefault();
     try {
       await axios.post(
-        "http://localhost:8000/api/job/createJob",
+        "https://jobapp-ytr3.onrender.com/api/job/createJob",
         { title, description, location },
         { headers: { Authorization: `Bearer ${token}` } }
       );
       alert("Job created successfully");
       setTitle(""); setDescription(""); setLocation("");
-      const res = await axios.get("http://localhost:8000/api/job/getJobs", {
+      const res = await axios.get("https://jobapp-ytr3.onrender.com/api/job/getJobs", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setJobs(res.data);
@@ -46,7 +46,7 @@ function AdminDashboard() {
 
   const deleteJob = async (jobId) => {
     try {
-      await axios.delete(`http://localhost:8000/api/job/deleteJob/${jobId}`, {
+      await axios.delete(`https://jobapp-ytr3.onrender.com/api/job/deleteJob/${jobId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert("Job deleted successfully");
@@ -60,7 +60,7 @@ function AdminDashboard() {
   const viewApplicants = async (jobId) => {
     try {
       const res = await axios.get(
-        `http://localhost:8000/api/application/applicants/${jobId}`,
+        `https://jobapp-ytr3.onrender.com/api/application/applicants/${jobId}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setApplicants(res.data.applicants || res.data);
